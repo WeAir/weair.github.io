@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="WeAir"><link rel="alternative" href="/atom.xml" title="WeAir" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>Debian9 ~/.bashrc文件不生效 - WeAir</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">WeAir</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2020-03-01T04:00:00.000Z">March 1, 2020</time><h1 class="post__title"><a href="/fix-bashrc-doesn't-work/">Debian9 ~/.bashrc文件不生效</a></h1><div class="post__main echo"><h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>新建用户user02，将user01目录下的<strong>.bashrc</strong>文件拷贝到了user02目录下，<strong>su - user02</strong>登陆user02时，<strong>.bashrc</strong>里设置的alias命令提示不存在。</p>
+<p>但是<strong>source ~/.bashrc</strong>后却可以正常使用。</p>
+<p>后来发现原因可能是缺少<strong>.profile</strong>文件导致的。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>1、将user01目录下的<strong>.profile</strong>文件拷贝到user02目录下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /home/user01/.profile /home/user02/</span><br><span class="line">sudo chown user02:user02 /home/user02/.profile</span><br></pre></td></tr></table></figure>
+
+<p>2、在user02目录下新建<strong>.profile</strong>文件，内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if [ -n &quot;$BASH_VERSION&quot; ]; then</span><br><span class="line">    if [ -f &quot;$HOME/.bashrc&quot; ]; then</span><br><span class="line">	. &quot;$HOME/.bashrc&quot;</span><br><span class="line">    fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p>然后，退出重新登陆user02就行了。</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/bashrc/">.bashrc</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//unpkg.com/leancloud-storage@4.12.0/dist/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({
+  el: '#v-container',
+  appId: 'u1yQ1lKVQjHyzschdLsKRXrP-MdYXbMMI',
+  appKey: 'gity6FddlUlmP23K5mzPOUIP',
+  avatar: 'wavatar',
+  lang: 'zh-cn',
+  placeholder: 'ヾﾉ≧∀≦)o来啊，造作啊!',
+  serverURLs: 'https://u1yQ1lKV.api.lncldglobal.com',
+  notify: false,
+  verify: false,
+  pageSize: 20,
+  avatarForce: false,
+  visitor: true,
+  highlight: true
+});</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2019 - 2023 WeAir</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

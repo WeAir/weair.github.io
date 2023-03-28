@@ -1,0 +1,17 @@
+User-agent: 360Spider
+Disallow: /
+User-agent: Baiduspider
+Disallow: /
+User-agent: Sosospider
+Disallow: /
+User-agent: sogou spider
+Disallow: /
+User-agent: Googlebot
+Disallow: 
+User-agent: Bingbot
+Disallow: 
+User-agent: Slurp
+Disallow: 
+User-agent: *
+Disallow: 
+Sitemap: https://weair.xyz/sitemap.xml
