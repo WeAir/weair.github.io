@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/migrating_mastodon/</loc>
+    
+    <lastmod>2023-12-02T08:19:38.390Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/nginx-quic/</loc>
     
     <lastmod>2023-07-26T15:25:41.925Z</lastmod>
@@ -114,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
+    <loc>https://weair.cc/reverse-proxy-google/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
+    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -135,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/reverse-proxy-google/</loc>
+    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -149,13 +156,6 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/fix-rpmdb/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/install-gitea/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
@@ -164,6 +164,13 @@
   
   <url>
     <loc>https://weair.cc/gitlab-reply-by-email/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/fix-rpmdb/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     
