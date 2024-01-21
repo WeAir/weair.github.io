@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/build-aria2/</loc>
+    
+    <lastmod>2024-01-21T07:14:21.440Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-vaultwarden/</loc>
+    
+    <lastmod>2024-01-21T06:45:31.778Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/migrating_mastodon/</loc>
     
     <lastmod>2023-12-02T08:19:38.390Z</lastmod>
@@ -114,7 +128,14 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/install-vaultwarden/</loc>
+    <loc>https://weair.cc/shell-script/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -129,20 +150,6 @@
   
   <url>
     <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/shell-script/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -180,13 +187,6 @@
     <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/build-aria2/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.667Z</lastmod>
     
   </url>
   
