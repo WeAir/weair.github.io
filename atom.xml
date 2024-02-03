@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weair.cc/"/>
-  <updated>2024-01-21T08:30:26.755Z</updated>
+  <updated>2024-02-03T07:44:07.669Z</updated>
   <id>https://weair.cc/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://weair.cc/murmur/"/>
     <id>https://weair.cc/murmur/</id>
     <published>2024-01-21T04:00:00.000Z</published>
-    <updated>2024-01-21T08:30:26.755Z</updated>
+    <updated>2024-02-03T07:44:07.669Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h3><p>开年暴击，迫于贫穷，一些网站程序什么的搬到了一家便宜的VPS上面。然后，就遇到了VPS所在的服务器炸了，稳定跑了好几年的网站程序还有数据全部灰飞烟灭，再三发工单确认数据救不回来之后，无奈又重新开了一台VPS，还好之前搭建的网站程序都是开源的，扒拉扒拉还能翻出来继续部署，折腾了挺久，就是那些数据彻底over了。</p><p>还有另外重新开了一台VPS，因为习惯用Firewalld，就顺手装上了，结果装完VPS就失联了，后台重装了好几遍系统，都是装完Firewalld就失联，最后排查出来Firewalld和系统自带的UFW起冲突了，我#$@!%，果断卸载UFW，拜拜了您嘞。</p><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>数据千万条，备份第一条。这两天终于治好了拖延症，把所有的VPS的数据都备份到了本地。对了，据说这两天那家的VPS又双叒叕失联了，希望不是服务器炸了（笑）。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="开始的开始"><a href="#开始的开始" class="headerlink" title="开始的开始"></a>开始的开始</h3><p>开年暴击，迫于贫穷，一些网站程序什么的搬到了一家便宜的VPS上面。然后，就遇到了VPS所在的服务器炸了，稳定跑了好几年的网站程序还有数据全部灰飞烟灭，再三发工单确认数据救不回来之后，无奈又重新开了一台VPS，还好之前搭建的网站程序都是开源的，扒拉扒拉翻出来还能继续部署，折腾了挺久，就是那些数据彻底寄了。</p><p>还有另外重新开了一台VPS，因为习惯用Firewalld，就顺手装上了，结果装完VPS就失联了，后台重装了好几遍系统，都是装完Firewalld就失联，最后排查出来Firewalld和系统自带的UFW起冲突了，我#$@!%，果断卸载UFW，拜拜了您嘞。</p><h3 id="最后的最后"><a href="#最后的最后" class="headerlink" title="最后的最后"></a>最后的最后</h3><p>数据千万条，备份第一条。这两天终于治好了拖延症，把所有的VPS的数据都备份到了本地。对了，据说这两天那家的VPS又双叒叕失联了，希望不是服务器炸了（笑）。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;碎碎念&quot;&gt;&lt;a href=&quot;#碎碎念&quot; class=&quot;headerlink&quot; title=&quot;碎碎念&quot;&gt;&lt;/a&gt;碎碎念&lt;/h3&gt;&lt;p&gt;开年暴击，迫于贫穷，一些网站程序什么的搬到了一家便宜的VPS上面。然后，就遇到了VPS所在的服务器炸了，稳定跑了好几年的网站程序还有
+        &lt;h3 id=&quot;开始的开始&quot;&gt;&lt;a href=&quot;#开始的开始&quot; class=&quot;headerlink&quot; title=&quot;开始的开始&quot;&gt;&lt;/a&gt;开始的开始&lt;/h3&gt;&lt;p&gt;开年暴击，迫于贫穷，一些网站程序什么的搬到了一家便宜的VPS上面。然后，就遇到了VPS所在的服务器炸了，稳定跑了好几
       
     
     </summary>
@@ -417,31 +417,6 @@
   </entry>
   
   <entry>
-    <title>Debian修改默认启动内核</title>
-    <link href="https://weair.cc/debian-change-kernel/"/>
-    <id>https://weair.cc/debian-change-kernel/</id>
-    <published>2020-03-22T04:00:00.000Z</published>
-    <updated>2021-10-14T09:00:22.668Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="查看当前系统内核"><a href="#查看当前系统内核" class="headerlink" title="查看当前系统内核"></a>查看当前系统内核</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cat /boot/grub/grub.cfg | grep menuentry</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ x<span class="string">"<span class="variable">$&#123;feature_menuentry_id&#125;</span>"</span> = xy ]; <span class="keyword">then</span></span><br><span class="line">  menuentry_id_option=<span class="string">"--id"</span></span><br><span class="line">  menuentry_id_option=<span class="string">""</span></span><br><span class="line"><span class="built_in">export</span> menuentry_id_option</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-simple-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">submenu <span class="string">'Advanced options for Debian GNU/Linux'</span> <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-12-amd64'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-12-amd64-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-12-amd64  (recovery mode)'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-12-amd64-recovery-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-11-amd64'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-11-amd64-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-11-amd64 (recovery mode)'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-11-amd64-recovery-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br></pre></td></tr></table></figure><p>###修改grub文件</p><p>假设修改启动内核为<strong>4.9.0-11</strong>，修改文件<strong>/etc/default/grub</strong>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br><span class="line"></span><br><span class="line">GRUB_DEFAULT=0</span><br><span class="line">修改为</span><br><span class="line">GRUB_DEFAULT=<span class="string">"Advanced options for Debian GNU/Linux&gt;Debian GNU/Linux, with Linux 4.9.0-11-amd64"</span></span><br></pre></td></tr></table></figure><p>其中<strong>Advanced options for Debian GNU/Linux</strong>是一级菜单，<strong>Debian GNU/Linux, with Linux 4.9.0-11-amd64</strong>是二级菜单，两者之间用<strong>&gt;</strong>连接。</p><h3 id="更新grub文件"><a href="#更新grub文件" class="headerlink" title="更新grub文件"></a>更新grub文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p>重启之后使用<strong>uname -r</strong>可以查看当前的系统内核。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;查看当前系统内核&quot;&gt;&lt;a href=&quot;#查看当前系统内核&quot; class=&quot;headerlink&quot; title=&quot;查看当前系统内核&quot;&gt;&lt;/a&gt;查看当前系统内核&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
-      
-    
-    </summary>
-    
-    
-      <category term="Linux Kernel" scheme="https://weair.cc/tags/Linux-Kernel/"/>
-    
-      <category term="Debian" scheme="https://weair.cc/tags/Debian/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CentOS修改默认启动内核</title>
     <link href="https://weair.cc/centos-change-kernel/"/>
     <id>https://weair.cc/centos-change-kernel/</id>
@@ -463,6 +438,31 @@
       <category term="CentOS" scheme="https://weair.cc/tags/CentOS/"/>
     
       <category term="Linux Kernel" scheme="https://weair.cc/tags/Linux-Kernel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Debian修改默认启动内核</title>
+    <link href="https://weair.cc/debian-change-kernel/"/>
+    <id>https://weair.cc/debian-change-kernel/</id>
+    <published>2020-03-22T04:00:00.000Z</published>
+    <updated>2021-10-14T09:00:22.668Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="查看当前系统内核"><a href="#查看当前系统内核" class="headerlink" title="查看当前系统内核"></a>查看当前系统内核</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cat /boot/grub/grub.cfg | grep menuentry</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ x<span class="string">"<span class="variable">$&#123;feature_menuentry_id&#125;</span>"</span> = xy ]; <span class="keyword">then</span></span><br><span class="line">  menuentry_id_option=<span class="string">"--id"</span></span><br><span class="line">  menuentry_id_option=<span class="string">""</span></span><br><span class="line"><span class="built_in">export</span> menuentry_id_option</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-simple-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">submenu <span class="string">'Advanced options for Debian GNU/Linux'</span> <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-12-amd64'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-12-amd64-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-12-amd64  (recovery mode)'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-12-amd64-recovery-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-11-amd64'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-11-amd64-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-11-amd64 (recovery mode)'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-11-amd64-recovery-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br></pre></td></tr></table></figure><p>###修改grub文件</p><p>假设修改启动内核为<strong>4.9.0-11</strong>，修改文件<strong>/etc/default/grub</strong>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br><span class="line"></span><br><span class="line">GRUB_DEFAULT=0</span><br><span class="line">修改为</span><br><span class="line">GRUB_DEFAULT=<span class="string">"Advanced options for Debian GNU/Linux&gt;Debian GNU/Linux, with Linux 4.9.0-11-amd64"</span></span><br></pre></td></tr></table></figure><p>其中<strong>Advanced options for Debian GNU/Linux</strong>是一级菜单，<strong>Debian GNU/Linux, with Linux 4.9.0-11-amd64</strong>是二级菜单，两者之间用<strong>&gt;</strong>连接。</p><h3 id="更新grub文件"><a href="#更新grub文件" class="headerlink" title="更新grub文件"></a>更新grub文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p>重启之后使用<strong>uname -r</strong>可以查看当前的系统内核。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;查看当前系统内核&quot;&gt;&lt;a href=&quot;#查看当前系统内核&quot; class=&quot;headerlink&quot; title=&quot;查看当前系统内核&quot;&gt;&lt;/a&gt;查看当前系统内核&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
+      
+    
+    </summary>
+    
+    
+      <category term="Linux Kernel" scheme="https://weair.cc/tags/Linux-Kernel/"/>
+    
+      <category term="Debian" scheme="https://weair.cc/tags/Debian/"/>
     
   </entry>
   
