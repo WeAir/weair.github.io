@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/install-sshwifty/</loc>
+    
+    <lastmod>2024-07-03T13:54:58.595Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/murmur/</loc>
     
     <lastmod>2024-02-03T07:44:07.669Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://weair.cc/register-a-domain/</loc>
     
     <lastmod>2022-10-22T11:10:24.788Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-sshwifty/</loc>
-    
-    <lastmod>2022-05-06T09:12:05.736Z</lastmod>
     
   </url>
   
