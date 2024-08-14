@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="WeAir"><link rel="alternative" href="/atom.xml" title="WeAir" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>Linux安装Cloudflare WARP - WeAir</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">WeAir</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2024-08-10T04:00:00.000Z">August 10, 2024</time><h1 class="post__title"><a href="/linux-install-warp/">Linux安装Cloudflare WARP</a></h1><div class="post__main echo"><p><a href="https://1.1.1.1" target="_blank" rel="noopener">WARP</a>是Cloudflare提供的一项基于WireGuard的网络流量安全及加速服务，能够让你通过连接到Cloudflare的边缘节点实现隐私保护及链路优化。</p>
+<h3 id="安装WARP客户端"><a href="#安装WARP客户端" class="headerlink" title="安装WARP客户端"></a>安装WARP客户端</h3><p>Ubuntu系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入cloudflare gpg key</span></span><br><span class="line">curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ <span class="variable">$(lsb_release -cs)</span> main"</span> | sudo tee /etc/apt/sources.list.d/cloudflare-client.list</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install cloudflare-warp</span><br></pre></td></tr></table></figure>
+
+<p>Debian系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入cloudflare gpg key</span></span><br><span class="line">curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ <span class="variable">$(lsb_release -cs)</span> main"</span> | sudo tee /etc/apt/sources.list.d/cloudflare-client.list</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install cloudflare-warp</span><br></pre></td></tr></table></figure>
+
+<p>Red Hat系统及其衍生版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line">curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | sudo tee /etc/yum.repos.d/cloudflare-warp.repo</span><br><span class="line"></span><br><span class="line"><span class="comment">#更新软件仓库</span></span><br><span class="line">sudo yum update</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo yum install cloudflare-warp</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置WARP"><a href="#配置WARP" class="headerlink" title="配置WARP"></a>配置WARP</h3><p>注册客户端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration new</span><br></pre></td></tr></table></figure>
+
+<p>绑定密钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration license xxxxxxxx-xxxxxxxx-xxxxxxxx</span><br></pre></td></tr></table></figure>
+
+<p>连接WARP</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli connect</span><br></pre></td></tr></table></figure>
+
+<p>测试socks5代理</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=socks5://127.0.0.1:40000</span><br><span class="line">curl ip.sb</span><br></pre></td></tr></table></figure>
+
+<p>如果返回的IP地址发生变化则说明连接成功。</p>
+<h3 id="其它相关命令"><a href="#其它相关命令" class="headerlink" title="其它相关命令"></a>其它相关命令</h3><p>查看当前连接状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli status</span><br></pre></td></tr></table></figure>
+
+<p>查看当前配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli settings</span><br></pre></td></tr></table></figure>
+
+<p>更换端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli proxy port</span><br></pre></td></tr></table></figure>
+
+<p>断开连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli disconnect</span><br></pre></td></tr></table></figure>
+
+<p>如果需要查看其它更多帮助可以使用以下命令或查看相关<a href="https://developers.cloudflare.com/warp-client/get-started/linux/" target="_blank" rel="noopener">文档</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>后续可以通过Cloudflare WARP完成更多其它操作。</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/warp/">warp</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//unpkg.com/leancloud-storage@4.12.0/dist/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({
+  el: '#v-container',
+  appId: 'u1yQ1lKVQjHyzschdLsKRXrP-MdYXbMMI',
+  appKey: 'gity6FddlUlmP23K5mzPOUIP',
+  avatar: 'wavatar',
+  lang: 'zh-cn',
+  placeholder: 'ヾﾉ≧∀≦)o来啊，造作啊!',
+  serverURLs: 'https://u1yQ1lKV.api.lncldglobal.com',
+  notify: false,
+  verify: false,
+  pageSize: 20,
+  avatarForce: false,
+  visitor: true,
+  highlight: true
+});</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2019 - 2024 WeAir</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

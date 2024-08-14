@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/linux-install-warp/</loc>
+    
+    <lastmod>2024-08-14T14:35:26.729Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/install-sshwifty/</loc>
     
     <lastmod>2024-07-03T13:54:58.595Z</lastmod>
@@ -135,20 +142,6 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/reverse-proxy-google/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/pixiv-shell-script/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
@@ -163,23 +156,23 @@
   </url>
   
   <url>
+    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/reverse-proxy-google/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/install-minio/</loc>
     
     <lastmod>2021-10-14T01:57:54.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-gitea/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     
   </url>
   
@@ -191,7 +184,21 @@
   </url>
   
   <url>
+    <loc>https://weair.cc/install-gitea/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/gitlab-reply-by-email/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     
