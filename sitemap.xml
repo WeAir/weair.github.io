@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/install-vaultwarden/</loc>
+    
+    <lastmod>2024-08-15T12:12:42.768Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/linux-install-warp/</loc>
     
-    <lastmod>2024-08-14T14:35:26.729Z</lastmod>
+    <lastmod>2024-08-15T12:10:00.565Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://weair.cc/build-aria2/</loc>
     
     <lastmod>2024-01-21T07:50:42.598Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-vaultwarden/</loc>
-    
-    <lastmod>2024-01-21T06:45:31.778Z</lastmod>
     
   </url>
   
@@ -149,7 +149,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
+    <loc>https://weair.cc/reverse-proxy-google/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -163,7 +163,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/reverse-proxy-google/</loc>
+    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -177,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/fix-rpmdb/</loc>
+    <loc>https://weair.cc/gitlab-reply-by-email/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/gitlab-reply-by-email/</loc>
+    <loc>https://weair.cc/fix-rpmdb/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     

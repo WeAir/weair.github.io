@@ -17,10 +17,10 @@
 <p>连接WARP</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli connect</span><br></pre></td></tr></table></figure>
 
-<p>测试socks5代理</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=socks5://127.0.0.1:40000</span><br><span class="line">curl ip.sb</span><br></pre></td></tr></table></figure>
+<p>验证连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=socks5://127.0.0.1:40000</span><br><span class="line">curl https://www.cloudflare.com/cdn-cgi/trace/</span><br></pre></td></tr></table></figure>
 
-<p>如果返回的IP地址发生变化则说明连接成功。</p>
+<p>如果返回<code>warp=on</code>或<code>warp=plus</code>则说明连接成功。</p>
 <h3 id="其它相关命令"><a href="#其它相关命令" class="headerlink" title="其它相关命令"></a>其它相关命令</h3><p>查看当前连接状态</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli status</span><br></pre></td></tr></table></figure>
 
