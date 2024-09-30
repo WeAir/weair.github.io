@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/pixiv-shell-script/</loc>
+    
+    <lastmod>2024-09-30T09:09:09.426Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/install-vaultwarden/</loc>
     
     <lastmod>2024-08-15T12:12:42.768Z</lastmod>
@@ -142,7 +149,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/pixiv-shell-script/</loc>
+    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -163,30 +170,9 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/install-minio/</loc>
     
     <lastmod>2021-10-14T01:57:54.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/gitlab-reply-by-email/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-gitea/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     
   </url>
   
@@ -199,6 +185,20 @@
   
   <url>
     <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/gitlab-reply-by-email/</loc>
+    
+    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-gitea/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     

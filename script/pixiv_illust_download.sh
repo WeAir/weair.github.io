@@ -30,7 +30,7 @@ while read line
 do
     while true
     do
-        wget -c ${line} -P ./${member_id}
+        aria2c -c  -d ./${member_id}  -x 15 -s 5 ${line}
         if [ -f ./${member_id}/`echo ${line} | rev | cut -d "/" -f 1 | rev` ]
         then
             break
