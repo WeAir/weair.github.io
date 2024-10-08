@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/upgrade-postgresql/</loc>
+    
+    <lastmod>2024-10-08T04:33:31.759Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/manage-dns-with-resolvconf/</loc>
+    
+    <lastmod>2024-10-08T03:35:39.260Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/linux-install-warp/</loc>
+    
+    <lastmod>2024-10-08T02:53:46.470Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/pixiv-shell-script/</loc>
     
     <lastmod>2024-09-30T09:09:09.426Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>https://weair.cc/install-vaultwarden/</loc>
     
     <lastmod>2024-08-15T12:12:42.768Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/linux-install-warp/</loc>
-    
-    <lastmod>2024-08-15T12:10:00.565Z</lastmod>
     
   </url>
   
@@ -79,7 +93,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/upgrading-gitlab/</loc>
+    <loc>https://weair.cc/upgrade-gitlab/</loc>
     
     <lastmod>2021-10-19T03:31:36.491Z</lastmod>
     
@@ -156,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/reverse-proxy-google/</loc>
+    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
+    <loc>https://weair.cc/reverse-proxy-google/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -184,7 +198,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
+    <loc>https://weair.cc/install-gitea/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     
@@ -198,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/install-gitea/</loc>
+    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
     
     <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     

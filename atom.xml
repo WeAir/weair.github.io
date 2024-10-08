@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weair.cc/"/>
-  <updated>2024-08-15T12:10:00.565Z</updated>
+  <updated>2024-10-08T04:33:31.759Z</updated>
   <id>https://weair.cc/</id>
   
   <author>
@@ -17,13 +17,60 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>升级PostgreSQL</title>
+    <link href="https://weair.cc/upgrade-postgresql/"/>
+    <id>https://weair.cc/upgrade-postgresql/</id>
+    <published>2024-10-07T04:00:00.000Z</published>
+    <updated>2024-10-08T04:33:31.759Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL</a>是一个开源的对象-关系数据库管理系统。</p><h3 id="检查正在运行的PostgreSQL版本"><a href="#检查正在运行的PostgreSQL版本" class="headerlink" title="检查正在运行的PostgreSQL版本"></a>检查正在运行的PostgreSQL版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_lsclusters</span><br></pre></td></tr></table></figure><h3 id="停止新版本的PostgreSQL"><a href="#停止新版本的PostgreSQL" class="headerlink" title="停止新版本的PostgreSQL"></a>停止新版本的PostgreSQL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_dropcluster 17 main --stop</span><br></pre></td></tr></table></figure><h3 id="再次检查正在运行的PostgreSQL版本"><a href="#再次检查正在运行的PostgreSQL版本" class="headerlink" title="再次检查正在运行的PostgreSQL版本"></a>再次检查正在运行的PostgreSQL版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_lsclusters</span><br></pre></td></tr></table></figure><h3 id="从旧版本的PostgreSQL升级"><a href="#从旧版本的PostgreSQL升级" class="headerlink" title="从旧版本的PostgreSQL升级"></a>从旧版本的PostgreSQL升级</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_upgradecluster 16 main</span><br></pre></td></tr></table></figure><h3 id="停止旧版本的PostgreSQL"><a href="#停止旧版本的PostgreSQL" class="headerlink" title="停止旧版本的PostgreSQL"></a>停止旧版本的PostgreSQL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pg_dropcluster 16 main</span><br></pre></td></tr></table></figure><h3 id="卸载旧版本的PostgreSQL"><a href="#卸载旧版本的PostgreSQL" class="headerlink" title="卸载旧版本的PostgreSQL"></a>卸载旧版本的PostgreSQL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge postgresql-16 postgresql-client-16</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://www.postgresql.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PostgreSQL&lt;/a&gt;是一个开源的对象-关系数据库管理系统。&lt;/p&gt;
+&lt;h3 id=&quot;检查正在运行的PostgreSQL版本&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="PostgreSQL" scheme="https://weair.cc/tags/PostgreSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu使用resolvconf配置DNS服务</title>
+    <link href="https://weair.cc/manage-dns-with-resolvconf/"/>
+    <id>https://weair.cc/manage-dns-with-resolvconf/</id>
+    <published>2024-10-01T04:00:00.000Z</published>
+    <updated>2024-10-08T03:35:39.260Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装resolvconf"><a href="#安装resolvconf" class="headerlink" title="安装resolvconf"></a>安装resolvconf</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install resolvconf</span><br></pre></td></tr></table></figure><h3 id="配置DNS服务"><a href="#配置DNS服务" class="headerlink" title="配置DNS服务"></a>配置DNS服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">"nameserver 1.1.1.1\nnameserver 1.0.0.1\n"</span> &gt;&gt; /etc/resolvconf/resolv.conf.d/head</span><br></pre></td></tr></table></figure><h3 id="更新DNS服务配置"><a href="#更新DNS服务配置" class="headerlink" title="更新DNS服务配置"></a>更新DNS服务配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resolvconf -u</span><br></pre></td></tr></table></figure><h3 id="查看当前DNS配置"><a href="#查看当前DNS配置" class="headerlink" title="查看当前DNS配置"></a>查看当前DNS配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resolvectl status</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;安装resolvconf&quot;&gt;&lt;a href=&quot;#安装resolvconf&quot; class=&quot;headerlink&quot; title=&quot;安装resolvconf&quot;&gt;&lt;/a&gt;安装resolvconf&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;t
+      
+    
+    </summary>
+    
+    
+      <category term="resolvconf" scheme="https://weair.cc/tags/resolvconf/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux安装Cloudflare WARP</title>
     <link href="https://weair.cc/linux-install-warp/"/>
     <id>https://weair.cc/linux-install-warp/</id>
     <published>2024-08-10T04:00:00.000Z</published>
-    <updated>2024-08-15T12:10:00.565Z</updated>
+    <updated>2024-10-08T02:53:46.470Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://1.1.1.1" target="_blank" rel="noopener">WARP</a>是Cloudflare提供的一项基于WireGuard的网络流量安全及加速服务，能够让你通过连接到Cloudflare的边缘节点实现隐私保护及链路优化。</p><h3 id="安装WARP客户端"><a href="#安装WARP客户端" class="headerlink" title="安装WARP客户端"></a>安装WARP客户端</h3><p>Ubuntu系统</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入cloudflare gpg key</span></span><br><span class="line">curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ <span class="variable">$(lsb_release -cs)</span> main"</span> | sudo tee /etc/apt/sources.list.d/cloudflare-client.list</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install cloudflare-warp</span><br></pre></td></tr></table></figure><p>Debian系统</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入cloudflare gpg key</span></span><br><span class="line">curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ <span class="variable">$(lsb_release -cs)</span> main"</span> | sudo tee /etc/apt/sources.list.d/cloudflare-client.list</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install cloudflare-warp</span><br></pre></td></tr></table></figure><p>Red Hat系统及其衍生版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line">curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | sudo tee /etc/yum.repos.d/cloudflare-warp.repo</span><br><span class="line"></span><br><span class="line"><span class="comment">#更新软件仓库</span></span><br><span class="line">sudo yum update</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo yum install cloudflare-warp</span><br></pre></td></tr></table></figure><h3 id="配置WARP"><a href="#配置WARP" class="headerlink" title="配置WARP"></a>配置WARP</h3><p>注册客户端</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration new</span><br></pre></td></tr></table></figure><p>绑定密钥</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration license xxxxxxxx-xxxxxxxx-xxxxxxxx</span><br></pre></td></tr></table></figure><p>连接WARP</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli connect</span><br></pre></td></tr></table></figure><p>验证连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=socks5://127.0.0.1:40000</span><br><span class="line">curl https://www.cloudflare.com/cdn-cgi/trace/</span><br></pre></td></tr></table></figure><p>如果返回<code>warp=on</code>或<code>warp=plus</code>则说明连接成功。</p><h3 id="其它相关命令"><a href="#其它相关命令" class="headerlink" title="其它相关命令"></a>其它相关命令</h3><p>查看当前连接状态</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli status</span><br></pre></td></tr></table></figure><p>查看当前配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli settings</span><br></pre></td></tr></table></figure><p>更换端口</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli proxy port</span><br></pre></td></tr></table></figure><p>断开连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli disconnect</span><br></pre></td></tr></table></figure><p>如果需要查看其它更多帮助可以使用以下命令或查看相关<a href="https://developers.cloudflare.com/warp-client/get-started/linux/" target="_blank" rel="noopener">文档</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli <span class="built_in">help</span></span><br></pre></td></tr></table></figure><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>后续可以通过Cloudflare WARP完成更多其它操作。</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://1.1.1.1" target="_blank" rel="noopener">WARP</a>是Cloudflare提供的一项基于WireGuard的网络流量安全及加速服务，能够让你通过连接到Cloudflare的边缘节点实现隐私保护及链路优化。</p><h3 id="安装WARP客户端"><a href="#安装WARP客户端" class="headerlink" title="安装WARP客户端"></a>安装WARP客户端</h3><p>Ubuntu系统</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入cloudflare gpg key</span></span><br><span class="line">curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ <span class="variable">$(lsb_release -cs)</span> main"</span> | sudo tee /etc/apt/sources.list.d/cloudflare-client.list</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install cloudflare-warp</span><br></pre></td></tr></table></figure><p>Debian系统</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#导入cloudflare gpg key</span></span><br><span class="line">curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ <span class="variable">$(lsb_release -cs)</span> main"</span> | sudo tee /etc/apt/sources.list.d/cloudflare-client.list</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install cloudflare-warp</span><br></pre></td></tr></table></figure><p>Red Hat系统及其衍生版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加软件仓库</span></span><br><span class="line">curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | sudo tee /etc/yum.repos.d/cloudflare-warp.repo</span><br><span class="line"></span><br><span class="line"><span class="comment">#更新软件仓库</span></span><br><span class="line">sudo yum update</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装</span></span><br><span class="line">sudo yum install cloudflare-warp</span><br></pre></td></tr></table></figure><h3 id="配置WARP"><a href="#配置WARP" class="headerlink" title="配置WARP"></a>配置WARP</h3><p>注册客户端</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration new</span><br></pre></td></tr></table></figure><p>绑定密钥</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration license xxxxxxxx-xxxxxxxx-xxxxxxxx</span><br></pre></td></tr></table></figure><p>设置代理模式</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli mode proxy</span><br></pre></td></tr></table></figure><p>连接WARP</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli connect</span><br></pre></td></tr></table></figure><p>验证连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=socks5://127.0.0.1:40000</span><br><span class="line">curl https://www.cloudflare.com/cdn-cgi/trace/</span><br></pre></td></tr></table></figure><p>如果返回<code>warp=on</code>或<code>warp=plus</code>则说明连接成功。</p><h3 id="其它相关命令"><a href="#其它相关命令" class="headerlink" title="其它相关命令"></a>其它相关命令</h3><p>查看当前连接状态</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli status</span><br></pre></td></tr></table></figure><p>查看当前配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli settings</span><br></pre></td></tr></table></figure><p>更换端口</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli proxy port</span><br></pre></td></tr></table></figure><p>断开连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli disconnect</span><br></pre></td></tr></table></figure><p>如果需要查看其它更多帮助可以使用以下命令或查看相关<a href="https://developers.cloudflare.com/warp-client/get-started/linux/" target="_blank" rel="noopener">文档</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli <span class="built_in">help</span></span><br></pre></td></tr></table></figure><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>后续可以通过Cloudflare WARP完成更多其它操作。</p>]]></content>
     
     <summary type="html">
     
@@ -418,8 +465,8 @@
   
   <entry>
     <title>源码升级GitLab</title>
-    <link href="https://weair.cc/upgrading-gitlab/"/>
-    <id>https://weair.cc/upgrading-gitlab/</id>
+    <link href="https://weair.cc/upgrade-gitlab/"/>
+    <id>https://weair.cc/upgrade-gitlab/</id>
     <published>2020-04-08T04:00:00.000Z</published>
     <updated>2021-10-19T03:31:36.491Z</updated>
     
@@ -436,56 +483,6 @@
     
     
       <category term="GitLab" scheme="https://weair.cc/tags/GitLab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS修改默认启动内核</title>
-    <link href="https://weair.cc/centos-change-kernel/"/>
-    <id>https://weair.cc/centos-change-kernel/</id>
-    <published>2020-03-22T04:00:00.000Z</published>
-    <updated>2021-10-14T08:59:18.863Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="查看当前系统内核"><a href="#查看当前系统内核" class="headerlink" title="查看当前系统内核"></a>查看当前系统内核</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo awk -F\<span class="string">' '</span><span class="variable">$1</span>==<span class="string">"menuentry "</span> &#123;<span class="built_in">print</span> <span class="variable">$2</span>&#125;<span class="string">' /etc/grub2.cfg</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">CentOS Linux (3.10.0-1062.18.1.el7.x86_64) 7 (Core)</span></span><br><span class="line"><span class="string">CentOS Linux 7 Rescue 37934a904e9234509c00524a5e733795 (3.10.0-1062.18.1.el7.x86_64)</span></span><br><span class="line"><span class="string">CentOS Linux (3.10.0-957.27.2.el7.x86_64) 7 (Core)</span></span><br><span class="line"><span class="string">CentOS Linux (0-rescue-65113b1a0d2f6087d515e6a8cd0ee7ef) 7 (Core)</span></span><br></pre></td></tr></table></figure><h3 id="设置默认启动内核"><a href="#设置默认启动内核" class="headerlink" title="设置默认启动内核"></a>设置默认启动内核</h3><p>假设修改启动内核为<strong>3.10.0-957.27.2</strong>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub2-set-default <span class="string">'CentOS Linux (3.10.0-957.27.2.el7.x86_64) 7 (Core)'</span></span><br></pre></td></tr></table></figure><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p>重启之后使用<strong>uname -r</strong>可以查看当前的系统内核。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;查看当前系统内核&quot;&gt;&lt;a href=&quot;#查看当前系统内核&quot; class=&quot;headerlink&quot; title=&quot;查看当前系统内核&quot;&gt;&lt;/a&gt;查看当前系统内核&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
-      
-    
-    </summary>
-    
-    
-      <category term="CentOS" scheme="https://weair.cc/tags/CentOS/"/>
-    
-      <category term="Linux Kernel" scheme="https://weair.cc/tags/Linux-Kernel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Debian修改默认启动内核</title>
-    <link href="https://weair.cc/debian-change-kernel/"/>
-    <id>https://weair.cc/debian-change-kernel/</id>
-    <published>2020-03-22T04:00:00.000Z</published>
-    <updated>2021-10-14T09:00:22.668Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="查看当前系统内核"><a href="#查看当前系统内核" class="headerlink" title="查看当前系统内核"></a>查看当前系统内核</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cat /boot/grub/grub.cfg | grep menuentry</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ x<span class="string">"<span class="variable">$&#123;feature_menuentry_id&#125;</span>"</span> = xy ]; <span class="keyword">then</span></span><br><span class="line">  menuentry_id_option=<span class="string">"--id"</span></span><br><span class="line">  menuentry_id_option=<span class="string">""</span></span><br><span class="line"><span class="built_in">export</span> menuentry_id_option</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-simple-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">submenu <span class="string">'Advanced options for Debian GNU/Linux'</span> <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-12-amd64'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-12-amd64-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-12-amd64  (recovery mode)'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-12-amd64-recovery-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-11-amd64'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-11-amd64-advanced-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br><span class="line">menuentry <span class="string">'Debian GNU/Linux, with Linux 4.9.0-11-amd64 (recovery mode)'</span> --class debian --class gnu-linux --class gnu --class os <span class="variable">$menuentry_id_option</span> <span class="string">'gnulinux-4.9.0-11-amd64-recovery-cdd695b0-e558-4915-ba1d-38c769fee1b1'</span> &#123;</span><br></pre></td></tr></table></figure><p>###修改grub文件</p><p>假设修改启动内核为<strong>4.9.0-11</strong>，修改文件<strong>/etc/default/grub</strong>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/grub</span><br><span class="line"></span><br><span class="line">GRUB_DEFAULT=0</span><br><span class="line">修改为</span><br><span class="line">GRUB_DEFAULT=<span class="string">"Advanced options for Debian GNU/Linux&gt;Debian GNU/Linux, with Linux 4.9.0-11-amd64"</span></span><br></pre></td></tr></table></figure><p>其中<strong>Advanced options for Debian GNU/Linux</strong>是一级菜单，<strong>Debian GNU/Linux, with Linux 4.9.0-11-amd64</strong>是二级菜单，两者之间用<strong>&gt;</strong>连接。</p><h3 id="更新grub文件"><a href="#更新grub文件" class="headerlink" title="更新grub文件"></a>更新grub文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p>重启之后使用<strong>uname -r</strong>可以查看当前的系统内核。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;查看当前系统内核&quot;&gt;&lt;a href=&quot;#查看当前系统内核&quot; class=&quot;headerlink&quot; title=&quot;查看当前系统内核&quot;&gt;&lt;/a&gt;查看当前系统内核&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
-      
-    
-    </summary>
-    
-    
-      <category term="Linux Kernel" scheme="https://weair.cc/tags/Linux-Kernel/"/>
-    
-      <category term="Debian" scheme="https://weair.cc/tags/Debian/"/>
     
   </entry>
   
