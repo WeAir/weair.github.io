@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/nginx-http3/</loc>
+    
+    <lastmod>2024-10-14T08:28:21.353Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-nextcloud/</loc>
+    
+    <lastmod>2024-10-14T08:25:28.306Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/install-gitlab/</loc>
     
     <lastmod>2024-10-14T07:28:30.633Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>https://weair.cc/install-gitea/</loc>
     
     <lastmod>2024-10-14T03:09:25.397Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-nextcloud/</loc>
-    
-    <lastmod>2024-10-14T03:00:17.409Z</lastmod>
     
   </url>
   
@@ -145,13 +152,6 @@
     <loc>https://weair.cc/install-sshwifty/</loc>
     
     <lastmod>2024-10-14T02:06:16.447Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/nginx-http3/</loc>
-    
-    <lastmod>2024-10-14T00:22:15.744Z</lastmod>
     
   </url>
   
