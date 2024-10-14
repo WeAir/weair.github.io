@@ -1,22 +1,22 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="WeAir"><link rel="alternative" href="/atom.xml" title="WeAir" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>编译安装aria2 - WeAir</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">WeAir</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2019-03-09T04:00:00.000Z">March 9, 2019</time><h1 class="post__title"><a href="/build-aria2/">编译安装aria2</a></h1><div class="post__main echo"><p><a href="https://aria2.github.io" title="aria2" target="_blank" rel="noopener">aria2</a>是一款轻量的支持多协议的开源命令行下载工具，支持HTTP/HTTPS、FTP、SFTP、BitTorrent和Metalink等协议的下载。aria2可通过内置的JSON-RPC及XML-RPC接口来进行操作。</p>
-<h3 id="下载aria2源码"><a href="#下载aria2源码" class="headerlink" title="下载aria2源码"></a>下载aria2源码</h3><p>官方<a href="https://github.com/aria2/aria2" title="github" target="_blank" rel="noopener">github</a>下载aria2的最新代码并解压。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git <span class="built_in">clone</span> https://github.com/aria2/aria2.git</span><br></pre></td></tr></table></figure>
-
 <h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>Debian系安装依赖：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y libssh2-1-dev libc-ares-dev libxml2-dev zlib1g-dev libsqlite3-dev pkg-config libssl-dev libcppunit-dev autoconf automake autotools-dev autopoint gcc g++ libtool make</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y autoconf automake autopoint autotools-dev g++ gcc libc-ares-dev libcppunit-dev libsqlite3-dev libssh2-1-dev libssl-dev libtool libxml2-dev make pkg-config zlib1g-dev</span><br></pre></td></tr></table></figure>
 
 <p>Red Hat系安装依赖：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y libgcrypt-devel libxml2-devel libssh2-devel openssl-devel gettext-devel cppunit cppunit-devel  c-ares-devel zlib-devel sqlite-devel pkgconfig autoconf automake gcc gcc-c++ libtool make xorg-x11-util-macros.noarch dh-autoreconf.noarch</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y autoconf automake c-ares-devel cppunit-devel dh-autoreconf.noarch gcc gcc-c++ gettext-devel libgcrypt-devel libssh2-devel libtool libxml2-devel make openssl-devel pkgconfig sqlite-devel xorg-x11-util-macros.noarch zlib-devel</span><br></pre></td></tr></table></figure>
 
-<h3 id="编译安装ari2"><a href="#编译安装ari2" class="headerlink" title="编译安装ari2"></a>编译安装ari2</h3><p>生成配置脚本和构建程序所需的其它文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo autoreconf -i</span><br></pre></td></tr></table></figure>
+<h3 id="下载aria2源码"><a href="#下载aria2源码" class="headerlink" title="下载aria2源码"></a>下载aria2源码</h3><p>官方<a href="https://github.com/aria2/aria2" title="github" target="_blank" rel="noopener">github</a>下载aria2的最新代码并解压。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/aria2/aria2.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译安装aria2"><a href="#编译安装aria2" class="headerlink" title="编译安装aria2"></a>编译安装aria2</h3><p>生成配置脚本和构建程序所需的其它文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoreconf -i</span><br></pre></td></tr></table></figure>
 
 <p>PS：aria2限制了最大线程数为16，可通过修改<strong>src/OptionHandlerFactory.cc</strong>里的<code>TEXT_MAX_CONNECTION_PER_SERVER</code>变量，将16改为任意整数。</p>
 <p>构建aria2。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure>
 
 <p>编译安装。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; sudo make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
 <p>PS：aria2默认路径为<strong>/usr/local/bin/aria2c</strong>。</p>
 <p>运行</p>

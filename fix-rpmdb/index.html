@@ -3,13 +3,13 @@
 
 <p>原因大概是，rpm数据库出现损坏。</p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>删除<strong>/var/lib/rpm/</strong>路径下的以<strong>__db.</strong>开头的文件（建议提前备份）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/lib/rpm/__db.*</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm /var/lib/rpm/__db.*</span><br></pre></td></tr></table></figure>
 
 <p>重建rpm数据库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --rebuilddb</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm --rebuilddb</span><br></pre></td></tr></table></figure>
 
 <p>清除所有yum的缓存</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum clean all</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></table></figure>
 
 <p>然后，再重新执行<strong>yum update</strong>命令就能升级软件包了。</p>
 </div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/rpmdb/">rpmdb</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//unpkg.com/leancloud-storage@4.12.0/dist/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({

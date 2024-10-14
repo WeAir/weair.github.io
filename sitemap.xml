@@ -2,9 +2,149 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/linux-install-warp/</loc>
+    
+    <lastmod>2024-10-14T03:54:15.080Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-gitlab/</loc>
+    
+    <lastmod>2024-10-14T03:37:57.473Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/fix-bashrc-doesn't-work/</loc>
+    
+    <lastmod>2024-10-14T03:13:40.511Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-gitea/</loc>
+    
+    <lastmod>2024-10-14T03:09:25.397Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/build-aria2/</loc>
+    
+    <lastmod>2024-10-14T03:05:29.412Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-nextcloud/</loc>
+    
+    <lastmod>2024-10-14T03:00:17.409Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/upgrade-gitlab/</loc>
+    
+    <lastmod>2024-10-14T02:36:51.523Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/gitlab-reply-by-email/</loc>
+    
+    <lastmod>2024-10-14T02:36:01.982Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/gitlab-configure-smtp/</loc>
+    
+    <lastmod>2024-10-14T02:35:20.366Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/gitlab-pages/</loc>
+    
+    <lastmod>2024-10-14T02:33:57.649Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/debian-change-kernel/</loc>
+    
+    <lastmod>2024-10-14T02:18:08.496Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/centos-vmware-tools/</loc>
+    
+    <lastmod>2024-10-14T02:17:54.756Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/centos-change-kernel/</loc>
+    
+    <lastmod>2024-10-14T02:17:25.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-minio/</loc>
+    
+    <lastmod>2024-10-14T02:16:05.644Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
+    
+    <lastmod>2024-10-14T02:15:28.381Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/fix-rpmdb/</loc>
+    
+    <lastmod>2024-10-14T02:15:15.305Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/ubuntu-install-sysv-rc-conf/</loc>
+    
+    <lastmod>2024-10-14T02:14:51.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-vaultwarden/</loc>
+    
+    <lastmod>2024-10-14T02:08:22.026Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
+    
+    <lastmod>2024-10-14T02:06:36.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-sshwifty/</loc>
+    
+    <lastmod>2024-10-14T02:06:16.447Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/nginx-http3/</loc>
     
-    <lastmod>2024-10-12T09:21:26.166Z</lastmod>
+    <lastmod>2024-10-14T00:22:15.744Z</lastmod>
     
   </url>
   
@@ -23,13 +163,6 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/linux-install-warp/</loc>
-    
-    <lastmod>2024-10-08T02:53:46.470Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/pixiv-shell-script/</loc>
     
     <lastmod>2024-09-30T09:09:09.426Z</lastmod>
@@ -37,30 +170,9 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/install-vaultwarden/</loc>
-    
-    <lastmod>2024-08-15T12:12:42.768Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-sshwifty/</loc>
-    
-    <lastmod>2024-07-03T13:54:58.595Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/murmur/</loc>
     
     <lastmod>2024-02-03T07:44:07.669Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/build-aria2/</loc>
-    
-    <lastmod>2024-01-21T07:50:42.598Z</lastmod>
     
   </url>
   
@@ -93,84 +205,7 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/upgrade-gitlab/</loc>
-    
-    <lastmod>2021-10-19T03:31:36.491Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-gitlab/</loc>
-    
-    <lastmod>2021-10-14T09:08:33.251Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/debian-change-kernel/</loc>
-    
-    <lastmod>2021-10-14T09:00:22.668Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/centos-change-kernel/</loc>
-    
-    <lastmod>2021-10-14T08:59:18.863Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/fix-bashrc-doesn't-work/</loc>
-    
-    <lastmod>2021-10-14T03:35:19.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-nextcloud/</loc>
-    
-    <lastmod>2021-10-14T02:49:46.567Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/ubuntu-install-sysv-rc-conf/</loc>
-    
-    <lastmod>2021-10-14T02:47:30.532Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/centos-vmware-tools/</loc>
-    
-    <lastmod>2021-10-14T02:46:19.769Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/gitlab-configure-smtp/</loc>
-    
-    <lastmod>2021-10-14T02:45:27.717Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/gitlab-pages/</loc>
-    
-    <lastmod>2021-10-14T02:44:33.718Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/reverse-proxy-google/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/pycharm-quick-lanuch/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
@@ -180,41 +215,6 @@
     <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
     
     <lastmod>2021-10-14T01:57:54.699Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-minio/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/fix-rpmdb/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/gitlab-reply-by-email/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-gitea/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.683Z</lastmod>
     
   </url>
   
