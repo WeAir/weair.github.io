@@ -12,11 +12,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autoreconf -i</span><br></pre></td></tr></table></figure>
 
 <p>PS：aria2限制了最大线程数为16，可通过修改<strong>src/OptionHandlerFactory.cc</strong>里的<code>TEXT_MAX_CONNECTION_PER_SERVER</code>变量，将16改为任意整数。</p>
-<p>构建aria2。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure>
-
-<p>编译安装。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>构建并编译安装aria2。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
 <p>PS：aria2默认路径为<strong>/usr/local/bin/aria2c</strong>。</p>
 <p>运行</p>

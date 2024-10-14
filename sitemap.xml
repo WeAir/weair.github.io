@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://weair.cc/linux-install-warp/</loc>
+    <loc>https://weair.cc/install-gitlab/</loc>
     
-    <lastmod>2024-10-14T03:54:15.080Z</lastmod>
+    <lastmod>2024-10-14T07:28:30.633Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://weair.cc/install-gitlab/</loc>
+    <loc>https://weair.cc/build-aria2/</loc>
     
-    <lastmod>2024-10-14T03:37:57.473Z</lastmod>
+    <lastmod>2024-10-14T07:27:43.795Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/reverse-proxy-google/</loc>
+    
+    <lastmod>2024-10-14T07:23:59.546Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/linux-install-warp/</loc>
+    
+    <lastmod>2024-10-14T03:54:15.080Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>https://weair.cc/install-gitea/</loc>
     
     <lastmod>2024-10-14T03:09:25.397Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/build-aria2/</loc>
-    
-    <lastmod>2024-10-14T03:05:29.412Z</lastmod>
     
   </url>
   
@@ -201,13 +208,6 @@
     <loc>https://weair.cc/github-actions/</loc>
     
     <lastmod>2021-10-25T07:44:31.029Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/reverse-proxy-google/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
   </url>
   
