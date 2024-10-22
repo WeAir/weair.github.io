@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
+    
+    <lastmod>2024-10-22T01:01:58.154Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/nginx-http3/</loc>
     
     <lastmod>2024-10-14T08:28:21.353Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>https://weair.cc/install-minio/</loc>
     
     <lastmod>2024-10-14T02:16:05.644Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/fix-fail2ban-doesn't-work/</loc>
-    
-    <lastmod>2024-10-14T02:15:28.381Z</lastmod>
     
   </url>
   

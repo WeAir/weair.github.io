@@ -6,7 +6,7 @@
 
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来发现，更改了时区后，但是日志的时间并没有修改过来，两者的时间不一致，导致了Fail2ban不生效。</p>
 <p>解决办法，重启日志服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart rsyslog</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart rsyslog.service</span><br></pre></td></tr></table></figure>
 
 <p>重启完日志服务之后Fail2ban就可以正常工作了。</p>
 </div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/Fail2ban/">Fail2ban</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//unpkg.com/leancloud-storage@4.12.0/dist/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({
