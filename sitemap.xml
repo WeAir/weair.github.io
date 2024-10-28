@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://weair.cc/murmur/</loc>
+    <loc>https://weair.cc/byebye-sogou/</loc>
     
-    <lastmod>2024-10-24T00:46:35.485Z</lastmod>
+    <lastmod>2024-10-28T00:21:58.226Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://weair.cc/byebye-sogou/</loc>
+    <loc>https://weair.cc/install-vaultwarden/</loc>
     
-    <lastmod>2024-10-24T00:41:13.581Z</lastmod>
+    <lastmod>2024-10-28T00:17:51.856Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/murmur/</loc>
+    
+    <lastmod>2024-10-24T00:46:35.485Z</lastmod>
     
   </url>
   
@@ -145,13 +152,6 @@
     <loc>https://weair.cc/ubuntu-install-sysv-rc-conf/</loc>
     
     <lastmod>2024-10-14T02:14:51.693Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-vaultwarden/</loc>
-    
-    <lastmod>2024-10-14T02:08:22.026Z</lastmod>
     
   </url>
   
