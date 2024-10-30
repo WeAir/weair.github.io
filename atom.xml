@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weair.cc/"/>
-  <updated>2024-10-30T03:41:13.305Z</updated>
+  <updated>2024-10-30T03:49:45.905Z</updated>
   <id>https://weair.cc/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ubuntn禁用systemd-resolved服务</title>
+    <title>Ubuntu禁用systemd-resolved服务</title>
     <link href="https://weair.cc/ubuntu-disable-systemd-resolved/"/>
     <id>https://weair.cc/ubuntu-disable-systemd-resolved/</id>
     <published>2024-10-25T04:00:00.000Z</published>
-    <updated>2024-10-30T03:41:13.305Z</updated>
+    <updated>2024-10-30T03:49:45.905Z</updated>
     
     <content type="html"><![CDATA[<p>Ubuntu会默认开启systemd-resolved服务占用53端口，某些情况下可能会导致端口冲突，所以需要关闭该服务。</p><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">'s/#DNSStubListener=yes/DNSStubListener=no/'</span> /etc/systemd/resolved.conf</span><br></pre></td></tr></table></figure><h3 id="创建软链接"><a href="#创建软链接" class="headerlink" title="创建软链接"></a>创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf</span><br></pre></td></tr></table></figure><h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart systemd-resolved.service</span><br></pre></td></tr></table></figure><h3 id="查看53端口是否使用"><a href="#查看53端口是否使用" class="headerlink" title="查看53端口是否使用"></a>查看53端口是否使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i :53</span><br></pre></td></tr></table></figure>]]></content>
     
