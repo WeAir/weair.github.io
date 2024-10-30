@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://weair.cc/"/>
-  <updated>2024-10-28T00:21:58.226Z</updated>
+  <updated>2024-10-30T03:25:57.465Z</updated>
   <id>https://weair.cc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntn禁用systemd-resolved服务</title>
+    <link href="https://weair.cc/ubuntu-disable-systemd-resolved/"/>
+    <id>https://weair.cc/ubuntu-disable-systemd-resolved/</id>
+    <published>2024-10-25T04:00:00.000Z</published>
+    <updated>2024-10-30T03:25:57.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ubuntu会默认开启systemd-resolved服务占用53端口，某些情况下可能会导致端口冲突，所以需要关闭该服务。</p><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">'s/#DNSStubListener=yes/DNSStubListener=no/'</span> /etc/systemd/resolved.conf</span><br></pre></td></tr></table></figure><h3 id="创建软链接"><a href="#创建软链接" class="headerlink" title="创建软链接"></a>创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf</span><br></pre></td></tr></table></figure><h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart systemd-resolved.service</span><br></pre></td></tr></table></figure><h3 id="检查53端口是否使用"><a href="#检查53端口是否使用" class="headerlink" title="检查53端口是否使用"></a>检查53端口是否使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i :53</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ubuntu会默认开启systemd-resolved服务占用53端口，某些情况下可能会导致端口冲突，所以需要关闭该服务。&lt;/p&gt;
+&lt;h3 id=&quot;修改配置文件&quot;&gt;&lt;a href=&quot;#修改配置文件&quot; class=&quot;headerlink&quot; title=&quot;修改配置文件&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+      <category term="Ubuntu" scheme="https://weair.cc/tags/Ubuntu/"/>
+    
+      <category term="systemd-resolved" scheme="https://weair.cc/tags/systemd-resolved/"/>
+    
+  </entry>
   
   <entry>
     <title>再见，搜狗输入法</title>
@@ -66,11 +92,11 @@
   </entry>
   
   <entry>
-    <title>Ubuntu使用resolvconf配置DNS服务</title>
+    <title>使用resolvconf配置DNS服务</title>
     <link href="https://weair.cc/manage-dns-with-resolvconf/"/>
     <id>https://weair.cc/manage-dns-with-resolvconf/</id>
     <published>2024-10-01T04:00:00.000Z</published>
-    <updated>2024-10-08T03:35:39.260Z</updated>
+    <updated>2024-10-30T03:34:56.167Z</updated>
     
     <content type="html"><![CDATA[<h3 id="安装resolvconf"><a href="#安装resolvconf" class="headerlink" title="安装resolvconf"></a>安装resolvconf</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install resolvconf</span><br></pre></td></tr></table></figure><h3 id="配置DNS服务"><a href="#配置DNS服务" class="headerlink" title="配置DNS服务"></a>配置DNS服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">"nameserver 1.1.1.1\nnameserver 1.0.0.1\n"</span> &gt;&gt; /etc/resolvconf/resolv.conf.d/head</span><br></pre></td></tr></table></figure><h3 id="更新DNS服务配置"><a href="#更新DNS服务配置" class="headerlink" title="更新DNS服务配置"></a>更新DNS服务配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resolvconf -u</span><br></pre></td></tr></table></figure><h3 id="查看当前DNS配置"><a href="#查看当前DNS配置" class="headerlink" title="查看当前DNS配置"></a>查看当前DNS配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resolvectl status</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -462,29 +488,6 @@
     
     
       <category term="minIO" scheme="https://weair.cc/tags/minIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitLab配置邮件回复</title>
-    <link href="https://weair.cc/gitlab-reply-by-email/"/>
-    <id>https://weair.cc/gitlab-reply-by-email/</id>
-    <published>2020-05-15T04:00:00.000Z</published>
-    <updated>2024-10-14T02:36:01.982Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/default</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'mail_room_enabled=true'</span> | tee -a /etc/default/gitlab</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /home/git/gitlab</span><br><span class="line">sudo -u git -H editor config/gitlab.yml</span><br></pre></td></tr></table></figure><p>找到如下配置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">## Reply by email</span><br><span class="line"># Allow users to comment on issues and merge requests by replying to notification emails.</span><br><span class="line"># For documentation on how to set this up, see http://doc.gitlab.com/ce/administration/reply_by_email.html</span><br><span class="line">incoming_email:</span><br><span class="line">  enabled: false</span><br><span class="line"></span><br><span class="line">  # The email address including the `%&#123;key&#125;` placeholder that will be replaced to reference the item being replied to.</span><br><span class="line">  # The placeholder can be omitted but if present, it must appear in the &quot;user&quot; part of the address (before the `@`).</span><br><span class="line">  # Please be aware that a placeholder is required for the Service Desk feature to work.</span><br><span class="line">  address: &quot;gitlab-incoming+%&#123;key&#125;@gmail.com&quot;</span><br><span class="line"></span><br><span class="line">  # Email account username</span><br><span class="line">  # With third party providers, this is usually the full email address.</span><br><span class="line">  # With self-hosted email servers, this is usually the user part of the email address.</span><br><span class="line">  user: &quot;gitlab-incoming@gmail.com&quot;</span><br><span class="line">  # Email account password</span><br><span class="line">  password: &quot;[REDACTED]&quot;</span><br><span class="line"></span><br><span class="line">  # IMAP server host</span><br><span class="line">  host: &quot;imap.gmail.com&quot;</span><br><span class="line">  # IMAP server port</span><br><span class="line">  port: 993</span><br><span class="line">  # Whether the IMAP server uses SSL</span><br><span class="line">  ssl: true</span><br><span class="line">  # Whether the IMAP server uses StartTLS</span><br><span class="line">  start_tls: false</span><br><span class="line"></span><br><span class="line">  # The mailbox where incoming mail will end up. Usually &quot;inbox&quot;.</span><br><span class="line">  mailbox: &quot;inbox&quot;</span><br><span class="line">  # The IDLE command timeout.</span><br><span class="line">  idle_timeout: 60</span><br><span class="line">  # The log file path for the structured log file.</span><br><span class="line">  # Since `mail_room` is run independently of Rails, an absolute path is preferred.</span><br><span class="line">  # The default is &apos;log/mail_room_json.log&apos; relative to the root of the Rails app.</span><br><span class="line">  #</span><br><span class="line">  # log_path: log/mail_room_json.log</span><br></pre></td></tr></table></figure><p><strong>false</strong>改为<strong>true</strong>，修改回复账号密码及IMAP配置。</p><h3 id="重启GitLab"><a href="#重启GitLab" class="headerlink" title="重启GitLab"></a>重启GitLab</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service gitlab restart</span><br><span class="line"><span class="comment">#或</span></span><br><span class="line">/etc/init.d/gitlab restart</span><br></pre></td></tr></table></figure><h3 id="验证配置是否正确"><a href="#验证配置是否正确" class="headerlink" title="验证配置是否正确"></a>验证配置是否正确</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u git -H bundle <span class="built_in">exec</span> rake gitlab:incoming_email:check RAILS_ENV=production</span><br></pre></td></tr></table></figure><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>其它问题可查询<a href="https://docs.gitlab.com/ce/administration/reply_by_email.html" title="官方文档" target="_blank" rel="noopener">官方文档</a>。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;编辑配置文件&quot;&gt;&lt;a href=&quot;#编辑配置文件&quot; class=&quot;headerlink&quot; title=&quot;编辑配置文件&quot;&gt;&lt;/a&gt;编辑配置文件&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
-      
-    
-    </summary>
-    
-    
-      <category term="GitLab" scheme="https://weair.cc/tags/GitLab/"/>
     
   </entry>
   
