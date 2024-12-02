@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://weair.cc/install-headscale-tailscale/</loc>
+    <loc>https://weair.cc/install-derp/</loc>
     
-    <lastmod>2024-12-02T00:13:41.461Z</lastmod>
+    <lastmod>2024-12-02T09:32:26.950Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://weair.cc/use-mosdns-build-doh/</loc>
     
-    <lastmod>2024-11-28T09:15:55.965Z</lastmod>
+    <lastmod>2024-12-02T09:30:03.551Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-headscale-tailscale/</loc>
+    
+    <lastmod>2024-12-02T00:13:41.461Z</lastmod>
     
   </url>
   
