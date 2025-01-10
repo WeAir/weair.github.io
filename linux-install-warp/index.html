@@ -11,11 +11,11 @@
 <h3 id="配置WARP"><a href="#配置WARP" class="headerlink" title="配置WARP"></a>配置WARP</h3><p>注册客户端</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration new</span><br></pre></td></tr></table></figure>
 
-<p>绑定密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration license xxxxxxxx-xxxxxxxx-xxxxxxxx</span><br></pre></td></tr></table></figure>
+<p>链接Zero Trust</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration new xxx</span><br></pre></td></tr></table></figure>
 
-<p>设置代理模式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli mode proxy</span><br></pre></td></tr></table></figure>
+<p>绑定TOKEN</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli registration token com.cloudflare.warp://xxx.cloudflareaccess.com/auth?token=xxxxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure>
 
 <p>连接WARP</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warp-cli connect</span><br></pre></td></tr></table></figure>

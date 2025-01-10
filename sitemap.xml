@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/linux-install-warp/</loc>
+    
+    <lastmod>2025-01-10T09:16:07.804Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/install-derp/</loc>
     
-    <lastmod>2024-12-02T09:32:26.950Z</lastmod>
+    <lastmod>2025-01-10T09:08:24.544Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-headscale-tailscale/</loc>
+    
+    <lastmod>2025-01-10T09:07:20.028Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://weair.cc/use-mosdns-build-doh/</loc>
     
     <lastmod>2024-12-02T09:30:03.551Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-headscale-tailscale/</loc>
-    
-    <lastmod>2024-12-02T00:13:41.461Z</lastmod>
     
   </url>
   
@@ -96,13 +103,6 @@
     <loc>https://weair.cc/reverse-proxy-google/</loc>
     
     <lastmod>2024-10-14T07:23:59.546Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/linux-install-warp/</loc>
-    
-    <lastmod>2024-10-14T03:54:15.080Z</lastmod>
     
   </url>
   
