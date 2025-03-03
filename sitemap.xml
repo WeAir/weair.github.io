@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/install-headscale-tailscale/</loc>
+    
+    <lastmod>2025-03-03T09:23:31.258Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/resize-lvm-partitions/</loc>
     
     <lastmod>2025-02-17T08:08:55.882Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://weair.cc/install-derp/</loc>
     
     <lastmod>2025-01-10T09:08:24.544Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-headscale-tailscale/</loc>
-    
-    <lastmod>2025-01-10T09:07:20.028Z</lastmod>
     
   </url>
   
