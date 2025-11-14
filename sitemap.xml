@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/migrating_mastodon/</loc>
+    
+    <lastmod>2025-11-14T01:54:14.704Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/install-vaultwarden/</loc>
     
     <lastmod>2025-11-12T02:58:14.907Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://weair.cc/upgrade-vmware-esxi/</loc>
     
     <lastmod>2025-11-12T02:47:06.187Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/migrating_mastodon/</loc>
-    
-    <lastmod>2025-11-12T02:17:38.838Z</lastmod>
     
   </url>
   
