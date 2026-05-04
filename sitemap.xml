@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/centos-change-kernel/</loc>
+    
+    <lastmod>2026-05-04T09:20:58.540Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/migrating_mastodon/</loc>
     
     <lastmod>2025-11-14T01:59:49.361Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>https://weair.cc/centos-vmware-tools/</loc>
     
     <lastmod>2024-10-14T02:17:54.756Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/centos-change-kernel/</loc>
-    
-    <lastmod>2024-10-14T02:17:25.392Z</lastmod>
     
   </url>
   
