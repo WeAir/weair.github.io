@@ -16,18 +16,4 @@
 
 <h3 id="Nginx反代配置"><a href="#Nginx反代配置" class="headerlink" title="Nginx反代配置"></a>Nginx反代配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">location /dns-query &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1:8443/dns-query;</span><br><span class="line">    proxy_set_header Host $host;</span><br><span class="line">    proxy_set_header X-Real-IP $proxy_protocol_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_protocol_addr;</span><br><span class="line">    proxy_set_header REMOTE-HOST $proxy_protocol_addr;</span><br><span class="line"></span><br><span class="line">    access_log  /path/dns-query.log;</span><br><span class="line">    &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
-</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/mosdns/">mosdns</a></li><li class="post__tag__item"><a class="post__tag__link" href="/tags/DOH/">DOH</a></li></ul></footer></article><div class="comments" id="v-container"><script src="//unpkg.com/leancloud-storage@4.12.0/dist/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({
-  el: '#v-container',
-  appId: 'u1yQ1lKVQjHyzschdLsKRXrP-MdYXbMMI',
-  appKey: 'gity6FddlUlmP23K5mzPOUIP',
-  avatar: 'wavatar',
-  lang: 'zh-cn',
-  placeholder: 'ヾﾉ≧∀≦)o来啊，造作啊!',
-  serverURLs: 'https://u1yQ1lKV.api.lncldglobal.com',
-  notify: false,
-  verify: false,
-  pageSize: 20,
-  avatarForce: false,
-  visitor: true,
-  highlight: true
-});</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2019 - 2026 WeAir</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/mosdns/">mosdns</a></li><li class="post__tag__item"><a class="post__tag__link" href="/tags/DOH/">DOH</a></li></ul></footer></article></main><footer class="foot"><div class="foot-copy">&copy; 2019 - 2026 WeAir</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
