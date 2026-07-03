@@ -4,14 +4,63 @@
   <url>
     <loc>https://weair.cc/install-headscale-tailscale/</loc>
     
-    <lastmod>2026-06-24T04:29:05.439Z</lastmod>
+    <lastmod>2026-07-03T09:50:28.883Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-vaultwarden/</loc>
+    
+    <lastmod>2026-07-03T09:46:12.870Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-gitea/</loc>
+    
+    <lastmod>2026-07-03T09:43:39.440Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
+    
+    <lastmod>2026-07-03T09:40:22.765Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/reverse-proxy-google/</loc>
+    
+    <lastmod>2026-07-03T09:39:51.083Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-minio/</loc>
+    
+    <lastmod>2026-07-03T09:39:11.053Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://weair.cc/use-mosdns-build-doh/</loc>
     
-    <lastmod>2026-06-24T03:57:07.787Z</lastmod>
+    <lastmod>2026-07-03T09:38:29.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-hedgedoc/</loc>
+    
+    <lastmod>2026-07-03T09:22:52.201Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-many-notes/</loc>
+    
+    <lastmod>2026-07-03T08:10:24.999Z</lastmod>
     
   </url>
   
@@ -40,13 +89,6 @@
     <loc>https://weair.cc/migrating_mastodon/</loc>
     
     <lastmod>2025-11-14T01:59:49.361Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-vaultwarden/</loc>
-    
-    <lastmod>2025-11-12T02:58:14.907Z</lastmod>
     
   </url>
   
@@ -135,23 +177,9 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/reverse-proxy-google/</loc>
-    
-    <lastmod>2024-10-14T07:23:59.546Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/fix-bashrc-doesn't-work/</loc>
     
     <lastmod>2024-10-14T03:13:40.511Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-gitea/</loc>
-    
-    <lastmod>2024-10-14T03:09:25.397Z</lastmod>
     
   </url>
   
@@ -187,13 +215,6 @@
     <loc>https://weair.cc/centos-vmware-tools/</loc>
     
     <lastmod>2024-10-14T02:17:54.756Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-minio/</loc>
-    
-    <lastmod>2024-10-14T02:16:05.644Z</lastmod>
     
   </url>
   
@@ -247,23 +268,9 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/install-hedgedoc/</loc>
-    
-    <lastmod>2021-10-27T09:11:23.645Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/github-actions/</loc>
     
     <lastmod>2021-10-25T07:44:31.029Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
-    
-    <lastmod>2021-10-14T01:57:54.699Z</lastmod>
     
   </url>
   
