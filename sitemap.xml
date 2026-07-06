@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/install-forgejo/</loc>
+    
+    <lastmod>2026-07-06T03:49:57.243Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://weair.cc/install-hedgedoc/</loc>
+    
+    <lastmod>2026-07-06T02:27:00.150Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/reverse-proxy-wikipedia/</loc>
     
     <lastmod>2026-07-06T01:43:43.189Z</lastmod>
@@ -23,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://weair.cc/install-hedgedoc/</loc>
-    
-    <lastmod>2026-07-06T01:41:20.942Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://weair.cc/install-headscale-tailscale/</loc>
     
     <lastmod>2026-07-06T01:37:29.128Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://weair.cc/install-many-notes/</loc>
     
     <lastmod>2026-07-03T10:32:44.992Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://weair.cc/install-gitea/</loc>
-    
-    <lastmod>2026-07-03T09:43:39.440Z</lastmod>
     
   </url>
   
