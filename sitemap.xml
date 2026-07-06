@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://weair.cc/install-forgejo/</loc>
+    
+    <lastmod>2026-07-06T04:40:49.206Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://weair.cc/install-hedgedoc/</loc>
     
     <lastmod>2026-07-06T02:27:00.150Z</lastmod>
