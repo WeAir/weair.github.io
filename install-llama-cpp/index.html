@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="WeAir"><link rel="alternative" href="/atom.xml" title="WeAir" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>离线安装部署llama.cpp - WeAir</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">WeAir</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2026-07-21T04:00:00.000Z">July 21, 2026</time><h1 class="post__title"><a href="/install-llama-cpp/">离线安装部署llama.cpp</a></h1><div class="post__main echo"><p><a href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener">llama.cpp</a>是一个开源的高性能大语言模型（LLM）推理框架。</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>提前准备好和离线设备架构及系统完全一致的干净的联网设备，确保所有必要的依赖包都能被完整下载。</p>
+<h3 id="离线安装开发工具"><a href="#离线安装开发工具" class="headerlink" title="离线安装开发工具"></a>离线安装开发工具</h3><p>联网设备下载安装包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ./pkgs</span><br><span class="line">dnf groupinstall <span class="string">"Development Tools"</span> --downloadonly --destdir=$(<span class="built_in">pwd</span>)/pkgs</span><br><span class="line">dnf download kernel-devel-$(uname -r) kernel-headers-$(uname -r) --downloadonly --destdir=$(<span class="built_in">pwd</span>)/pkgs</span><br></pre></td></tr></table></figure>
+
+<p>将pkgs文件夹拷贝至离线设备并安装开发工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./pkgs</span><br><span class="line">dnf localinstall *.rpm --disablerepo=* --nogpgcheck</span><br></pre></td></tr></table></figure>
+
+<p>验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc --version</span><br><span class="line">make --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="离线安装编译工具"><a href="#离线安装编译工具" class="headerlink" title="离线安装编译工具"></a>离线安装编译工具</h3><p><a href="https://github.com/kitware/cmake/releases" target="_blank" rel="noopener">CMake下载页面</a>下载预编译包并拷贝至离线设备解压至指定路径。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/<span class="built_in">local</span>/cmake</span><br><span class="line">tar -zxvf cmake-*-linux-x86_64.tar.gz -C /usr/<span class="built_in">local</span>/cmake --strip-components=1</span><br></pre></td></tr></table></figure>
+
+<p>配置Cmake环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export CMAKE_HOME=/usr/local/cmake</span></span><br><span class="line"><span class="string">export PATH=$CMAKE_HOME/bin:$PATH'</span> &gt; /etc/profile.d/cmake.sh</span><br><span class="line"><span class="built_in">source</span> /etc/profile.d/cmake.sh</span><br></pre></td></tr></table></figure>
+
+<p>验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="禁用Nouveau驱动"><a href="#禁用Nouveau驱动" class="headerlink" title="禁用Nouveau驱动"></a>禁用Nouveau驱动</h3><p>创建配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'blacklist nouveau</span></span><br><span class="line"><span class="string">options nouveau modeset=0'</span> &gt;&gt; /etc/modprobe.d/blacklist-nouveau.conf</span><br></pre></td></tr></table></figure>
+
+<p>备份并重新生成initramfs镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r).img.bak</span><br><span class="line">dracut -v /boot/initramfs-$(uname -r).img $(uname -r)</span><br></pre></td></tr></table></figure>
+
+<p>重启设备并验证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br><span class="line">lsmod | grep -i nouveau</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Nvidia显卡驱动及CUDA-Toolkit"><a href="#安装Nvidia显卡驱动及CUDA-Toolkit" class="headerlink" title="安装Nvidia显卡驱动及CUDA Toolkit"></a>安装Nvidia显卡驱动及CUDA Toolkit</h3><p>查看显卡型号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lspci | grep -i nvidia</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.nvidia.com/en-us/drivers" target="_blank" rel="noopener">Nvidia驱动官网</a>下载对应型号的.run驱动文件并拷贝至离线设备。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x NVIDIA-Linux-x86_64-*.run</span><br><span class="line">./NVIDIA-Linux-x86_64-*.run -no-x-check -no-nouveau-check -no-opengl-files</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">CUDA Toolkit下载页面</a>下载对应版本的.run文件并拷贝至离线设备。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x cuda_*_linux.run</span><br><span class="line">./cuda_*_linux.run --silent --toolkit</span><br></pre></td></tr></table></figure>
+
+<p> 配置CUDA环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export CUDA_HOME=/usr/local/cuda</span></span><br><span class="line"><span class="string">export PATH=$CUDA_HOME/bin:$PATH</span></span><br><span class="line"><span class="string">export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH'</span> &gt; /etc/profile.d/cuda.sh</span><br><span class="line"><span class="built_in">source</span> /etc/profile.d/cuda.sh</span><br></pre></td></tr></table></figure>
+
+<p>验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译安装llama-cpp"><a href="#编译安装llama-cpp" class="headerlink" title="编译安装llama.cpp"></a>编译安装llama.cpp</h3><p><a href="https://github.com/ggml-org/llama.cpp/releases" target="_blank" rel="noopener">llama.cpp下载页面</a>下载源代码并拷贝至离线设备编译安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cmake -B build \</span><br><span class="line">  -DGGML_CUDA=ON \</span><br><span class="line">  -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/llama</span><br><span class="line">cmake --build build --config Release -j $(nproc)</span><br><span class="line">cmake --install build</span><br></pre></td></tr></table></figure>
+
+<p>配置llama.cpp环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'export LLAMA_HOME=/usr/local/llama</span></span><br><span class="line"><span class="string">export PATH=$LLAMA_HOME/bin:$PATH</span></span><br><span class="line"><span class="string">export LD_LIBRARY_PATH=$LLAMA_HOME/lib64:$LD_LIBRARY_PATH'</span> &gt; /etc/profile.d/llama.sh</span><br><span class="line"><span class="built_in">source</span> /etc/profile.d/llama.sh</span><br></pre></td></tr></table></figure>
+
+<p>验证安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llama-cli --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载并运行模型"><a href="#下载并运行模型" class="headerlink" title="下载并运行模型"></a>下载并运行模型</h3><p><a href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a>或者<a href="https://modelscope.cn/home" target="_blank" rel="noopener">ModelScope</a>下载GGUF格式的模型并拷贝至离线设备指定路径。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">llama-cli -m models/model.gguf -ngl 99 -c 4096 -cnv</span><br><span class="line">或</span><br><span class="line">llama-server -m models/model.gguf -ngl 99 -c 4096 --host 0.0.0.0 --port 8080</span><br></pre></td></tr></table></figure>
+
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/llama-cpp/">llama.cpp</a></li></ul></footer></article></main><footer class="foot"><div class="foot-copy">&copy; 2019 - 2026 WeAir</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
